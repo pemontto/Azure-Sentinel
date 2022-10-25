@@ -4,7 +4,7 @@ description: |
     'Adversaries may steal the credentials of a specific user or service account using Credential Access techniques or capture credentials earlier in their reconnaissance process through social engineering for means of gaining Persistence. Umbreon, for example, creates valid users to provide access to the system.
     The query below generates an output of successful Sign-in with one or more of the following indications:
     - performed by new or recently dormant accounts
-    - where one or more features of the activitiy deviates from the user, his peers or the tenant profile
+    - where one or more features of the activity deviates from the user, his peers or the tenant profile
     - performed by a user with Risk indicaiton from AAD'
 requiredDataConnectors:
   - connectorId: BehaviorAnalytics

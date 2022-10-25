@@ -1,5 +1,5 @@
 id: 892cd37e-f9e1-49c3-b0b2-d74f52ac7b71
-name: VIP account more than 6 failed logons in 10
+name: VIP account more than 6 failed logons in 10 minutes
 description: |
   'VIP Account with more than 6 failed logon attempts in 10 minutes, include your own VIP list in the table below
    NTSTATUS codes - https://docs.microsoft.com/openspecs/windows_protocols/ms-erref/596a1078-e883-4972-9bbc-49e60bebca55'
@@ -19,9 +19,9 @@ query: |
   let timeframe = 10m;
   List
   | project TargetUserName = tolower(VIPUser), TargetDomainName = toupper(Domain)
-  | join kind= rightsemi ( 
-  SecurityEvent 
-  | where TimeGenerated > ago(2*timeframe) 
+  | join kind= rightsemi (
+  SecurityEvent
+  | where TimeGenerated > ago(2*timeframe)
   | where EventID == "4625"
   | where AccountType == "User"
   ) on TargetUserName, TargetDomainName
