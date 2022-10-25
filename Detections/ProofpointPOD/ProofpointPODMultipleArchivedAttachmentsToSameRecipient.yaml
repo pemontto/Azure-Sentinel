@@ -18,13 +18,14 @@ relevantTechniques:
 query: |
   let lbtime = 30m;
   let msgthreshold = 3;
+  let compressedTypes = dynamic(['zip', 'rar', 'tar', 'x-7z-compressed']);
   ProofpointPOD
   | where TimeGenerated > ago(lbtime)
   | where EventType == 'message'
   | where NetworkDirection == 'outbound'
   | extend attachedMimeType = todynamic(MsgParts)[0]['detectedMime']
-  | where attachedMimeType == 'application/zip'
-  | summarize count() by SrcUserUpn, DstUserUpn
+  | where attachedMimeType has_any (compressedTypes)
+  | summarize count(), make_set(attachedMimeType) by SrcUserUpn, DstUserUpn
   | where count_ > msgthreshold
   | extend AccountCustomEntity = SrcUserUpn
 entityMappings:

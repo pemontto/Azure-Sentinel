@@ -21,7 +21,7 @@ triggerThreshold: 0
 tactics:
   - CredentialAccess
 relevantTechniques:
-  - T1550.001
+  - T1528
 query: |
   // Include your additions to the allow list below as needed
   let AllowedUserList = dynamic(["Microsoft Cloud App Security","ADConnectSyncAccount1","SyncAccount2"]);

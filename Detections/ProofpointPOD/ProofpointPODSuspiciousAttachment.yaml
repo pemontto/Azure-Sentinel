@@ -24,9 +24,8 @@ query: |
   | where NetworkDirection == 'inbound'
   | where FilterDisposition !in ('reject', 'discard')
   | extend attachedExt = todynamic(MsgParts)[0]['detectedExt']
-  | where attachedExt in (disallowed_ext)
-  | project SrcUserUpn, DstUserUpn
-  | extend AccountCustomEntity = DstUserUpn
+  | where tolower(attachedExt) in (disallowed_ext)
+  | project SrcUserUpn, AccountCustomEntity = parse_json(DstUserUpn)[0], attachedExt
 entityMappings:
   - entityType: Account
     fieldMappings:
