@@ -17,7 +17,6 @@ tactics:
 relevantTechniques:
   - T1030
 query: |
-
   let threshold = 5;
   let szSharePointFileOperation = "SharePointFileOperation";
   let szOperations = dynamic(["FileDownloaded", "FileUploaded"]);
@@ -40,13 +39,13 @@ query: |
   | order by recentCount desc, UserAgent
   // More than 5 downloads/uploads from a new user agent today
   | where recentCount > threshold;
-  OfficeActivity 
-  | where TimeGenerated > ago(endtime) 
-  | where RecordType =~ szSharePointFileOperation 
+  OfficeActivity
+  | where TimeGenerated > ago(endtime)
+  | where RecordType =~ szSharePointFileOperation
   | where Operation in~ (szOperations)
   | where isnotempty(UserAgent)
   | join kind= inner (RareUserAgent)
-  on UserAgent, RecordType, Operation    
+  on UserAgent, RecordType, Operation
   | where Start_Time between(min_Start_Time .. max_Start_Time)
   | summarize StartTimeUtc = min(min_Start_Time), EndTimeUtc = max(max_Start_Time) by RecordType, Operation, UserAgent, UserType, UserId, ClientIP, OfficeWorkload, Site_Url, OfficeObjectId, UserAgentSeenCount = recentCount
   | extend timestamp = StartTimeUtc, AccountCustomEntity = UserId, IPCustomEntity = ClientIP, URLCustomEntity = Site_Url

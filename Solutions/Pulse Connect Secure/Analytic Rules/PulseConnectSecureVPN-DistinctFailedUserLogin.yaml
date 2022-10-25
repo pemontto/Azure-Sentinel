@@ -6,7 +6,7 @@ severity: Medium
 status: Available
 requiredDataConnectors:
   - connectorId: PulseConnectSecure
-    dataTypes: 
+    dataTypes:
       - Syslog
 queryFrequency: 1h
 queryPeriod: 1h
@@ -15,9 +15,8 @@ triggerThreshold: 0
 tactics:
   - CredentialAccess
 relevantTechniques:
-  - T1110  
+  - T1110
 query: |
-
   let threshold = 100;
   PulseConnectSecure
   | where Messages startswith "Login failed"

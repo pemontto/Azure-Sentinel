@@ -17,7 +17,6 @@ triggerThreshold: 0
 tactics:
   - Impact
 query: |
-
   let dt_lookBack = 1h;
   let ioc_lookBack = 14d;
   ThreatIntelligenceIndicator
@@ -44,7 +43,7 @@ query: |
   on $left.TI_ipEntity == $right.CIp
   | where AppService_TimeGenerated < ExpirationDateTime
   | summarize AppService_TimeGenerated = arg_max(AppService_TimeGenerated, *) by IndicatorId, CIp
-  | project AppService_TimeGenerated, Description, ActivityGroupNames, IndicatorId, ThreatType, Url, ExpirationDateTime, ConfidenceScore, TI_ipEntity, CsUsername, 
+  | project AppService_TimeGenerated, Description, ActivityGroupNames, IndicatorId, ThreatType, Url, ExpirationDateTime, ConfidenceScore, TI_ipEntity, CsUsername,
   WebApp = split(_ResourceId, '/')[8], CIp, CsHost, NetworkIP, NetworkDestinationIP, NetworkSourceIP, EmailSourceIpAddress, _ResourceId
   | extend timestamp = AppService_TimeGenerated, AccountCustomEntity = CsUsername, IPCustomEntity = CIp, URLCustomEntity = Url, HostCustomEntity = CsHost
 entityMappings:

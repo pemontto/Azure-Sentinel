@@ -9,7 +9,6 @@ queryPeriod: 1d
 triggerOperator: gt
 triggerThreshold: 1
 query: |
-
   let timeframe = ago(1d);
   AppServiceAntivirusScanAuditLogs
   | where NumberOfInfectedFiles > 0

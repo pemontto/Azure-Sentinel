@@ -41,7 +41,6 @@ tactics:
 relevantTechniques:
   - T1568
 query: |
-
     let triThreshold = 500;
     let startTime = 6h;
     let dgaLengthThreshold = 8;

@@ -6,7 +6,7 @@ severity: Medium
 status: Available
 requiredDataConnectors:
   - connectorId: VMwareCarbonBlack
-    dataTypes: 
+    dataTypes:
       - CarbonBlackNotifications_CL
 queryFrequency: 1h
 queryPeriod: 1h
@@ -17,7 +17,6 @@ tactics:
 relevantTechniques:
   - T1210
 query: |
-
   let threshold = 8;
   CarbonBlackNotifications_CL
   | where threatHunterInfo_score_d >= threshold

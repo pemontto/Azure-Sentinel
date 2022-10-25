@@ -29,7 +29,6 @@ relevantTechniques:
   - T1078
   - T1098
 query: |
-
   //The bigger the window the better the data sample size, as we use IP prevalence, more sample data is better.
   //The minimum number of countries that the account has been accessed from [default: 2]
   let minimumCountries = 2;

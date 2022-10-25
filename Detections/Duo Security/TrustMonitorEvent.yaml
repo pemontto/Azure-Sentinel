@@ -11,7 +11,6 @@ triggerThreshold: 0
 tactics:
   - CredentialAccess
 query: |
-
   let timeframe = ago(5m);
   DuoSecurityTrustMonitor_CL
   | where TimeGenerated >= timeframe

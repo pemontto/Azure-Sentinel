@@ -20,7 +20,6 @@ triggerThreshold: 0
 tactics:
   - Impact
 query: |
-
     let dt_lookBack = 1h;
     let ioc_lookBack = 14d;
     //Create a list of TLDs in our threat feed for later validation of extracted domains
@@ -63,7 +62,7 @@ query: |
         ) on $left.DomainName==$right.Domain
         | where CommonSecurityLog_TimeGenerated < ExpirationDateTime
         | summarize CommonSecurityLog_TimeGenerated = arg_max(CommonSecurityLog_TimeGenerated, *) by IndicatorId, Domain
-        | project CommonSecurityLog_TimeGenerated, Description, ActivityGroupNames, PA_Url, Domain, IndicatorId, ThreatType, ExpirationDateTime, ConfidenceScore, 
+        | project CommonSecurityLog_TimeGenerated, Description, ActivityGroupNames, PA_Url, Domain, IndicatorId, ThreatType, ExpirationDateTime, ConfidenceScore,
         DeviceAction, DestinationIP, DestinationPort, DeviceName, SourceIP, SourcePort, ApplicationProtocol, RequestMethod
         | extend timestamp = CommonSecurityLog_TimeGenerated, IPCustomEntity = SourceIP, HostCustomEntity = DeviceName, URLCustomEntity = PA_Url
 entityMappings:

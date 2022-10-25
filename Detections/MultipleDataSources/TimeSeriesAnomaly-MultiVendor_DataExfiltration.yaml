@@ -29,7 +29,6 @@ relevantTechniques:
 tags:
   - DEV-0537
 query: |
-
   let starttime = 14d;
   let endtime = 1d;
   let timeframe = 1h;

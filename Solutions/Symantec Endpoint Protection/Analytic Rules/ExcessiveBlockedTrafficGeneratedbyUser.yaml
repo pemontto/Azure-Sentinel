@@ -6,14 +6,13 @@ severity: Medium
 status: Available
 requiredDataConnectors:
   - connectorId: SymantecEndpointProtection
-    dataTypes: 
+    dataTypes:
       - Syslog
 queryFrequency: 1h
 queryPeriod: 1h
 triggerOperator: gt
 triggerThreshold: 0
 query: |
-
   let threshold = 15;
   let NoteableEvents = SymantecEndpointProtection
   | where LogType == "Agent Traffic Logs"

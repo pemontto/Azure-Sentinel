@@ -6,7 +6,7 @@ severity: Medium
 status: Available
 requiredDataConnectors:
   - connectorId: QualysVulnerabilityManagement
-    dataTypes: 
+    dataTypes:
       - QualysHostDetection_CL
 queryFrequency: 1h
 queryPeriod: 1h
@@ -17,7 +17,6 @@ tactics:
 relevantTechniques:
   - T1190
 query: |
-
   let threshold = 10;
   QualysHostDetectionV2_CL
   | where Severity_s == "5"

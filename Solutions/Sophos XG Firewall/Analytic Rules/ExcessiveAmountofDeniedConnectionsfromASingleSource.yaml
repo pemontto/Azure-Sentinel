@@ -6,7 +6,7 @@ severity: Medium
 status: Available
 requiredDataConnectors:
   - connectorId: SophosXGFirewall
-    dataTypes: 
+    dataTypes:
       - Syslog
 queryFrequency: 1h
 queryPeriod: 1h
@@ -17,7 +17,6 @@ tactics:
 relevantTechniques:
   - T1499
 query: |
-
   let threshold = 5000;
   SophosXGFirewall
   | where Log_Type =~ "Firewall" and Status =~ "Deny"

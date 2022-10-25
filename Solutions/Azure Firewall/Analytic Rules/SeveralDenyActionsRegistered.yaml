@@ -6,7 +6,7 @@ severity: Medium
 status: Available
 requiredDataConnectors:
   - connectorId: AzureFirewall
-    dataTypes: 
+    dataTypes:
       - AzureDiagnostics
 queryFrequency: 1h
 queryPeriod: 1h
@@ -21,7 +21,6 @@ relevantTechniques:
   - T1071
   - T1210
 query: |
-
   let threshold = 1;
   AzureDiagnostics
       | where OperationName in ("AzureFirewallApplicationRuleLog","AzureFirewallNetworkRuleLog")

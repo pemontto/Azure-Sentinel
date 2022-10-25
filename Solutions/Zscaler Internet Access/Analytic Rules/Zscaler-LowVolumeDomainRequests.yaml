@@ -18,7 +18,6 @@ relevantTechniques:
   - T1102
   - T1071
 query: |
-
   let scriptExtensions = dynamic([".php", ".aspx", ".asp", ".cfml"]);
   //The number of URI's seen to be suspicious, higher = less likely to be suspicious
   let uriThreshold = 1;

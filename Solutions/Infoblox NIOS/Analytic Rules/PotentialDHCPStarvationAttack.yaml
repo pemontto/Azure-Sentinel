@@ -6,7 +6,7 @@ severity: Medium
 status: Available
 requiredDataConnectors:
   - connectorId: InfobloxNIOS
-    dataTypes: 
+    dataTypes:
       - Syslog
 queryFrequency: 1h
 queryPeriod: 1h
@@ -17,7 +17,6 @@ tactics:
 relevantTechniques:
   - T1200
 query: |
-
   let threshold = 1000;
   Infoblox
   | where ProcessName =~ "dhcpd" and Log_Type =~ "DHCPREQUEST"

@@ -11,11 +11,11 @@ requiredDataConnectors:
     dataTypes:
       - SecurityEvent
   - connectorId: WindowsSecurityEvents
-    dataTypes: 
-      - SecurityEvents 
+    dataTypes:
+      - SecurityEvents
   - connectorId: WindowsForwardedEvents
-    dataTypes: 
-      - WindowsEvent 
+    dataTypes:
+      - WindowsEvent
 queryFrequency: 1d
 queryPeriod: 1d
 triggerOperator: gt
@@ -28,8 +28,6 @@ relevantTechniques:
   - T1027
   - T1140
 query: |
-
-
   let ProcessCreationEvents=() {
   let processEvents=(union isfuzzy=true
   (SecurityEvent
@@ -54,7 +52,7 @@ query: |
   ProcessCreationEvents
   | where CommandLine contains "TVqQAAMAAAAEAAA"
   | extend timestamp = StartTimeUtc, AccountCustomEntity = Account, HostCustomEntity = Computer
-  
+
 entityMappings:
   - entityType: Account
     fieldMappings:

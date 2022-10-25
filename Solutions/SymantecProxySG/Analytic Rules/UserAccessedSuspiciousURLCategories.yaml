@@ -6,7 +6,7 @@ severity: Medium
 status: Available
 requiredDataConnectors:
   - connectorId: SymantecProxySG
-    dataTypes: 
+    dataTypes:
       - Syslog
 queryFrequency: 1h
 queryPeriod: 1h
@@ -15,7 +15,6 @@ triggerThreshold: 0
 tactics:
   - DefenseEvasion
 query: |
-
   SymantecProxySG
   | mv-expand cs_categories
   | where cs_categories has_any ("Suspicious","phishing", "hacking")

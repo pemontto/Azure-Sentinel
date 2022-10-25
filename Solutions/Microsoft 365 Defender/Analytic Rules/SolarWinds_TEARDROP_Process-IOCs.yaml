@@ -27,8 +27,7 @@ tags:
   - Sunburst
   - Solorigate
   - NOBELIUM
-query:  |
-
+query: |
   DeviceEvents
   | where ActionType has "ExploitGuardNonMicrosoftSignedBlocked"
   | where InitiatingProcessFileName contains "svchost.exe" and FileName contains "NetSetupSvc.dll"

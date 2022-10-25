@@ -23,8 +23,7 @@ relevantTechniques:
   - T1195
   - T1059
   - T1546
-query:  |
-
+query: |
   let SunburstURL=dynamic(["panhardware.com","databasegalore.com","avsvmcloud.com","freescanonline.com","thedoccloud.com","deftsecurity.com"]);
   DeviceNetworkEvents
   | where ActionType == "ConnectionSuccess"
@@ -33,7 +32,7 @@ query:  |
       timestamp = TimeGenerated,
       AccountCustomEntity = iff(isnotempty(InitiatingProcessAccountUpn), InitiatingProcessAccountUpn, InitiatingProcessAccountName),
       HostCustomEntity = DeviceName,
-      FileHashCustomEntity = InitiatingProcessMD5, 
+      FileHashCustomEntity = InitiatingProcessMD5,
       HashAlgorithm = 'MD5',
       URLCustomEntity = RemoteUrl,
       IPCustomEntity = RemoteIP

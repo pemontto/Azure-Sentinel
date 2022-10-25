@@ -14,7 +14,6 @@ tactics:
 relevantTechniques:
   - T1040
 query: |
-
   ZoomLogs
   | where Event =~ "account.settings_updated"
   | extend NewE2ESetting = columnifexists("payload_object_settings_in_meeting_e2e_encryption_b", "")

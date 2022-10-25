@@ -20,7 +20,6 @@ tags:
   - Solorigate
   - NOBELIUM
 query: |
-
   AuditLogs
   | where Category =~ "ApplicationManagement"
   | where ActivityDisplayName has_any ("Add delegated permission grant","Add app role assignment to service principal")

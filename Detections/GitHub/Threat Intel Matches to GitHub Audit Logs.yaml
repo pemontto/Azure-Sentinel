@@ -17,7 +17,6 @@ triggerThreshold: 0
 tactics:
   - Impact
 query: |
-
   ThreatIntelligenceIndicator
   | where Action == true
   // Picking up only IOC's that contain the entities we want

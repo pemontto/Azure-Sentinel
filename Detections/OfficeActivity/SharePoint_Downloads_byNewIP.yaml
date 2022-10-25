@@ -17,7 +17,6 @@ tactics:
 relevantTechniques:
   - T1030
 query: |
-
   let threshold = 50;
   let szSharePointFileOperation = "SharePointFileOperation";
   let szOperations = dynamic(["FileDownloaded", "FileUploaded"]);
@@ -37,8 +36,8 @@ query: |
   let RareIP = recentActivity | join kind= leftanti ( historicalActivity ) on ClientIP, RecordType, Operation
   // More than 50 downloads/uploads from a new IP
   | where recentCount > threshold;
-  OfficeActivity 
-  | where TimeGenerated >= ago(endtime) 
+  OfficeActivity
+  | where TimeGenerated >= ago(endtime)
   | where RecordType =~ szSharePointFileOperation
   | where Operation in~ (szOperations)
   | join kind= inner (RareIP) on ClientIP, RecordType, Operation

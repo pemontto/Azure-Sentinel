@@ -9,7 +9,6 @@ tactics:
 relevantTechniques:
   - T1562
 query: |
-
   GitHubAudit
   | where Action == "org.disable_two_factor_requirement"
   | project TimeGenerated, Action, Actor, Country, IPaddress, Repository
