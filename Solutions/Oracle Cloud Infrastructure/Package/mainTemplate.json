@@ -41,7 +41,7 @@
     "email": "support@microsoft.com",
     "_email": "[variables('email')]",
     "_solutionName": "Oracle Cloud Infrastructure",
-    "_solutionVersion": "3.0.1",
+    "_solutionVersion": "3.0.2",
     "solutionId": "azuresentinel.azure-sentinel-solution-ocilogs",
     "_solutionId": "[variables('solutionId')]",
     "workbookVersion1": "1.0.0",
@@ -201,7 +201,7 @@
         "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
       ],
       "properties": {
-        "description": "OracleCloudInfrastructureOCIWorkbook Workbook with template version 3.0.1",
+        "description": "OracleCloudInfrastructureOCIWorkbook Workbook with template version 3.0.2",
         "mainTemplate": {
           "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
           "contentVersion": "[variables('workbookVersion1')]",
@@ -289,7 +289,7 @@
         "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
       ],
       "properties": {
-        "description": "OCIDestinationsIn_HuntingQueries Hunting Query with template version 3.0.1",
+        "description": "OCIDestinationsIn_HuntingQueries Hunting Query with template version 3.0.2",
         "mainTemplate": {
           "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
           "contentVersion": "[variables('huntingQueryVersion1')]",
@@ -374,7 +374,7 @@
         "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
       ],
       "properties": {
-        "description": "OCIDestinationsOut_HuntingQueries Hunting Query with template version 3.0.1",
+        "description": "OCIDestinationsOut_HuntingQueries Hunting Query with template version 3.0.2",
         "mainTemplate": {
           "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
           "contentVersion": "[variables('huntingQueryVersion2')]",
@@ -459,7 +459,7 @@
         "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
       ],
       "properties": {
-        "description": "OCILaunchedInstances_HuntingQueries Hunting Query with template version 3.0.1",
+        "description": "OCILaunchedInstances_HuntingQueries Hunting Query with template version 3.0.2",
         "mainTemplate": {
           "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
           "contentVersion": "[variables('huntingQueryVersion3')]",
@@ -544,7 +544,7 @@
         "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
       ],
       "properties": {
-        "description": "OCIUpdateActivities_HuntingQueries Hunting Query with template version 3.0.1",
+        "description": "OCIUpdateActivities_HuntingQueries Hunting Query with template version 3.0.2",
         "mainTemplate": {
           "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
           "contentVersion": "[variables('huntingQueryVersion4')]",
@@ -629,7 +629,7 @@
         "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
       ],
       "properties": {
-        "description": "OCIUserDeleteActions_HuntingQueries Hunting Query with template version 3.0.1",
+        "description": "OCIUserDeleteActions_HuntingQueries Hunting Query with template version 3.0.2",
         "mainTemplate": {
           "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
           "contentVersion": "[variables('huntingQueryVersion5')]",
@@ -714,7 +714,7 @@
         "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
       ],
       "properties": {
-        "description": "OCIUserDeletedUsers_HuntingQueries Hunting Query with template version 3.0.1",
+        "description": "OCIUserDeletedUsers_HuntingQueries Hunting Query with template version 3.0.2",
         "mainTemplate": {
           "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
           "contentVersion": "[variables('huntingQueryVersion6')]",
@@ -799,7 +799,7 @@
         "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
       ],
       "properties": {
-        "description": "OCIUserNewUsers_HuntingQueries Hunting Query with template version 3.0.1",
+        "description": "OCIUserNewUsers_HuntingQueries Hunting Query with template version 3.0.2",
         "mainTemplate": {
           "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
           "contentVersion": "[variables('huntingQueryVersion7')]",
@@ -884,7 +884,7 @@
         "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
       ],
       "properties": {
-        "description": "OCIUserSources_HuntingQueries Hunting Query with template version 3.0.1",
+        "description": "OCIUserSources_HuntingQueries Hunting Query with template version 3.0.2",
         "mainTemplate": {
           "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
           "contentVersion": "[variables('huntingQueryVersion8')]",
@@ -969,7 +969,7 @@
         "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
       ],
       "properties": {
-        "description": "OCIUserTerminatedInstances_HuntingQueries Hunting Query with template version 3.0.1",
+        "description": "OCIUserTerminatedInstances_HuntingQueries Hunting Query with template version 3.0.2",
         "mainTemplate": {
           "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
           "contentVersion": "[variables('huntingQueryVersion9')]",
@@ -1054,7 +1054,7 @@
         "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
       ],
       "properties": {
-        "description": "OCIUserUpdatedInstances_HuntingQueries Hunting Query with template version 3.0.1",
+        "description": "OCIUserUpdatedInstances_HuntingQueries Hunting Query with template version 3.0.2",
         "mainTemplate": {
           "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
           "contentVersion": "[variables('huntingQueryVersion10')]",
@@ -1139,7 +1139,7 @@
         "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
       ],
       "properties": {
-        "description": "Oracle Cloud Infrastructure data connector with template version 3.0.1",
+        "description": "Oracle Cloud Infrastructure data connector with template version 3.0.2",
         "mainTemplate": {
           "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
           "contentVersion": "[variables('dataConnectorVersion1')]",
@@ -1540,7 +1540,7 @@
         "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
       ],
       "properties": {
-        "description": "OCIDiscoveryActivity_AnalyticalRules Analytics Rule with template version 3.0.1",
+        "description": "OCIDiscoveryActivity_AnalyticalRules Analytics Rule with template version 3.0.2",
         "mainTemplate": {
           "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
           "contentVersion": "[variables('analyticRuleVersion1')]",
@@ -1644,7 +1644,7 @@
         "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
       ],
       "properties": {
-        "description": "OCIEventRuleDeleted_AnalyticalRules Analytics Rule with template version 3.0.1",
+        "description": "OCIEventRuleDeleted_AnalyticalRules Analytics Rule with template version 3.0.2",
         "mainTemplate": {
           "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
           "contentVersion": "[variables('analyticRuleVersion2')]",
@@ -1748,7 +1748,7 @@
         "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
       ],
       "properties": {
-        "description": "OCIInboundSSHConnection_AnalyticalRules Analytics Rule with template version 3.0.1",
+        "description": "OCIInboundSSHConnection_AnalyticalRules Analytics Rule with template version 3.0.2",
         "mainTemplate": {
           "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
           "contentVersion": "[variables('analyticRuleVersion3')]",
@@ -1852,7 +1852,7 @@
         "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
       ],
       "properties": {
-        "description": "OCIInsecureMetadataEndpoint_AnalyticalRules Analytics Rule with template version 3.0.1",
+        "description": "OCIInsecureMetadataEndpoint_AnalyticalRules Analytics Rule with template version 3.0.2",
         "mainTemplate": {
           "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
           "contentVersion": "[variables('analyticRuleVersion4')]",
@@ -1956,7 +1956,7 @@
         "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
       ],
       "properties": {
-        "description": "OCIMetadataEndpointIpAccess_AnalyticalRules Analytics Rule with template version 3.0.1",
+        "description": "OCIMetadataEndpointIpAccess_AnalyticalRules Analytics Rule with template version 3.0.2",
         "mainTemplate": {
           "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
           "contentVersion": "[variables('analyticRuleVersion5')]",
@@ -2060,7 +2060,7 @@
         "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
       ],
       "properties": {
-        "description": "OCIMultipleInstancesLaunched_AnalyticalRules Analytics Rule with template version 3.0.1",
+        "description": "OCIMultipleInstancesLaunched_AnalyticalRules Analytics Rule with template version 3.0.2",
         "mainTemplate": {
           "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
           "contentVersion": "[variables('analyticRuleVersion6')]",
@@ -2164,7 +2164,7 @@
         "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
       ],
       "properties": {
-        "description": "OCIMultipleInstancesTerminated_AnalyticalRules Analytics Rule with template version 3.0.1",
+        "description": "OCIMultipleInstancesTerminated_AnalyticalRules Analytics Rule with template version 3.0.2",
         "mainTemplate": {
           "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
           "contentVersion": "[variables('analyticRuleVersion7')]",
@@ -2268,7 +2268,7 @@
         "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
       ],
       "properties": {
-        "description": "OCIMultipleRejects_AnalyticalRules Analytics Rule with template version 3.0.1",
+        "description": "OCIMultipleRejects_AnalyticalRules Analytics Rule with template version 3.0.2",
         "mainTemplate": {
           "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
           "contentVersion": "[variables('analyticRuleVersion8')]",
@@ -2372,7 +2372,7 @@
         "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
       ],
       "properties": {
-        "description": "OCISSHScan_AnalyticalRules Analytics Rule with template version 3.0.1",
+        "description": "OCISSHScan_AnalyticalRules Analytics Rule with template version 3.0.2",
         "mainTemplate": {
           "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
           "contentVersion": "[variables('analyticRuleVersion9')]",
@@ -2476,7 +2476,7 @@
         "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
       ],
       "properties": {
-        "description": "OCIUnexpectedUserAgent_AnalyticalRules Analytics Rule with template version 3.0.1",
+        "description": "OCIUnexpectedUserAgent_AnalyticalRules Analytics Rule with template version 3.0.2",
         "mainTemplate": {
           "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
           "contentVersion": "[variables('analyticRuleVersion10')]",
@@ -2580,7 +2580,7 @@
         "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
       ],
       "properties": {
-        "description": "OCILogs Data Parser with template version 3.0.1",
+        "description": "OCILogs Data Parser with template version 3.0.2",
         "mainTemplate": {
           "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
           "contentVersion": "[variables('parserVersion1')]",
@@ -2708,7 +2708,7 @@
       "apiVersion": "2023-04-01-preview",
       "location": "[parameters('workspace-location')]",
       "properties": {
-        "version": "3.0.1",
+        "version": "3.0.2",
         "kind": "Solution",
         "contentSchemaVersion": "3.0.0",
         "displayName": "Oracle Cloud Infrastructure",

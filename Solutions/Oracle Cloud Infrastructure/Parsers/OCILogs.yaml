@@ -9,10 +9,10 @@ FunctionAlias: OCILogs
 FunctionQuery: |
     OCI_Logs_CL
     | extend EventVendor = 'Oracle'
-    | extend EventProduct = 'Oracle Cloud Infrastructure'
-    | extend EventStartTime = coalesce(unixtime_seconds_todatetime(column_ifexists("data_startTime_d", long(null))), time_t)
-    | extend EventEndTime = coalesce(unixtime_seconds_todatetime(column_ifexists("data_endTime_d", long(null))), time_t)
-    | extend SrcIpAddr=coalesce(column_ifexists("data_sourceAddress_s",''),data_identity_ipAddress_s)
+    , EventProduct = 'Oracle Cloud Infrastructure'
+    , EventStartTime = coalesce(unixtime_seconds_todatetime(column_ifexists("data_startTime_d", long(null))), time_t)
+    , EventEndTime = coalesce(unixtime_seconds_todatetime(column_ifexists("data_endTime_d", long(null))), time_t)
+    , SrcIpAddr=coalesce(column_ifexists("data_sourceAddress_s",''),column_ifexists('data_identity_ipAddress_s', ''),column_ifexists('data_clientAddr_s', ''))
     , SrcPortNumber=column_ifexists("data_sourcePort_d", '')
     , DstIpAddr=column_ifexists("data_destinationAddress_s",'')
     , DstPortNumber=column_ifexists("data_destinationPort_d",'')
@@ -22,8 +22,15 @@ FunctionQuery: |
     , data_stateChange_current_userName_s = column_ifexists("data_stateChange_current_userName_s",'')
     , data_request_headers_oci_original_url_s = column_ifexists("data_request_headers_oci_original_url_s", '')
     , data_action_s = column_ifexists("data_action_s",'')
+    , data_message_s = column_ifexists("data_message_s",'')
+    , data_identity_userAgent_s = column_ifexists("data_identity_userAgent_s",'')
+    , data_response_status_s = column_ifexists("data_response_status_s",'')
+    , data_request_action_s = column_ifexists("data_request_action_s",'')
+    | extend SrcIpAddr = split(SrcIpAddr, ':')
+    | extend SrcPortNumber = iif(array_length(SrcIpAddr) > 1, toint(SrcIpAddr[1]), int(null))
+    , SrcIpAddr = tostring(SrcIpAddr[0])
     | project-rename EventType=type_s
-    | project-rename EventMessage=data_message_s
-    | project-rename HttpUserAgentOriginal=data_identity_userAgent_s
-    | project-rename HttpStatusCode=data_response_status_s
-    | project-rename HttpRequestMethod=data_request_action_s
+    , EventMessage=data_message_s
+    , HttpUserAgentOriginal=data_identity_userAgent_s
+    , HttpStatusCode=data_response_status_s
+    , HttpRequestMethod=data_request_action_s
